@@ -6,7 +6,682 @@
   <meta name="theme-color" content="#f4f6fb" />
   <title>Sevkiyat Takip Merkezi</title>
   <style>
-    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172033;background:#f4f6fb;font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0;min-height:100vh}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:248px;background:#111b34;color:#d7deee;padding:26px 18px;display:flex;flex-direction:column;z-index:3}.brand{display:flex;align-items:center;gap:12px;padding:0 10px 32px;color:#fff;font-weight:750;font-size:17px}.brand-mark{width:36px;height:36px;border-radius:11px;background:#4263eb;display:grid;place-items:center;color:#fff;font-size:19px}.nav-label{padding:10px 12px;color:#8290ad;font-size:10px;font-weight:800;letter-spacing:1.4px}.nav-link{width:100%;display:flex;align-items:center;gap:12px;padding:12px;border:0;border-radius:9px;background:transparent;color:#c0c9db;text-align:left;font:inherit;font-size:13px;cursor:pointer;margin:2px 0}.nav-link.active,.nav-link:hover{background:#243253;color:#fff}.nav-icon{width:20px;text-align:center;font-size:16px}.sidebar-note{margin-top:auto;background:#1a2744;border:1px solid #2a3858;border-radius:12px;padding:14px;font-size:12px;line-height:1.6;color:#b8c5dc}.sidebar-note strong{display:block;color:white;margin-bottom:4px}.main{margin-left:248px;padding:30px 38px 48px;max-width:1700px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:30px}.eyebrow{font-size:11px;color:#7a849a;font-weight:700;letter-spacing:.5px;margin:0 0 5px}.heading{font-size:25px;letter-spacing:-.7px;margin:0;color:#182238}.top-right{display:flex;align-items:center;gap:12px}.today{font-size:12px;color:#6b7487}.avatar{width:37px;height:37px;background:#e6eaff;color:#3856d8;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800}.button{border:0;border-radius:9px;padding:11px 15px;font:inherit;font-weight:700;font-size:12px;cursor:pointer;transition:.15s}.button-primary{background:#4263eb;color:#fff;box-shadow:0 4px 10px #4263eb30}.button-primary:hover{background:#3453d1;transform:translateY(-1px)}.button-light{background:#f0f3f9;color:#34405a}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:23px}.stat{background:white;border:1px solid #e8ebf2;border-radius:13px;padding:18px 19px;box-shadow:0 2px 7px #18223805}.stat-top{display:flex;justify-content:space-between;align-items:center;color:#707b91;font-size:12px}.stat-icon{height:31px;width:31px;border-radius:9px;background:#eef1ff;color:#4a64d7;display:grid;place-items:center;font-size:15px}.stat-value{font-size:27px;font-weight:750;letter-spacing:-.8px;margin:13px 0 3px}.stat-caption{font-size:11px;color:#8a93a5}.content-card{background:#fff;border:1px solid #e8ebf2;border-radius:13px;box-shadow:0 2px 7px #18223805}.section-card{padding:20px 21px;margin-bottom:18px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:16px}.section-title{font-size:15px;margin:0;font-weight:750}.section-desc{font-size:11px;color:#8790a2;margin:5px 0 0}.region-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.region-card{min-width:0;text-align:left;background:#fff;border:1px solid #e7eaf1;border-radius:10px;padding:13px 14px;cursor:pointer;transition:.15s;color:inherit}.region-card:hover{border-color:#9cacf7;box-shadow:0 5px 15px #273d8410;transform:translateY(-1px)}.region-card.selected{background:#f0f3ff;border-color:#637ced;box-shadow:0 0 0 2px #4263eb14}.region-name{font-size:12px;line-height:1.45;font-weight:750;color:#35415a;min-height:34px}.region-count{font-size:10px;color:#8790a2;margin-top:8px}.region-count strong{font-size:13px;color:#4263eb}.region-breakdown{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;font-size:9px;color:#7b8598}.region-breakdown span{display:inline-flex;align-items:center;gap:4px}.dot{width:6px;height:6px;border-radius:50%;display:inline-block}.dot-transit{background:#dfa52d}.dot-delivered{background:#2c9b5b}.dot-preparing{background:#6479df}.clear-region{display:none}.clear-region.visible{display:inline-flex}.card-header{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:19px 21px;border-bottom:1px solid #edf0f5}.card-title{margin:0;font-size:15px;font-weight:750}.card-subtitle{margin:4px 0 0;color:#8790a2;font-size:11px}.filters{display:flex;align-items:center;gap:9px}.search-wrap{position:relative}.search-wrap span{position:absolute;left:11px;top:8px;color:#8d96a8}.search{height:35px;width:225px;padding:0 11px 0 32px;border:1px solid #e2e6ee;border-radius:8px;font:inherit;font-size:12px;outline:none}.search:focus,select:focus,input:focus{border-color:#8397f4;box-shadow:0 0 0 3px #4263eb18;outline:none}.select{height:35px;border:1px solid #e2e6ee;border-radius:8px;padding:0 10px;background:white;color:#525d72;font:inherit;font-size:11px}.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;color:#8790a2;font-size:10px;font-weight:700;letter-spacing:.45px;padding:12px 19px;background:#fbfcfe}td{padding:15px 19px;border-top:1px solid #f0f2f6;font-size:12px;color:#404b60}tbody tr:hover{background:#fafbff}.doc-id{font-weight:750;color:#354fc1}.destination{font-weight:650;color:#293449}.subtext{font-size:10px;color:#8992a4;margin-top:4px}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:20px;padding:5px 9px;font-size:10px;font-weight:700}.pill:before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}.status-transit{background:#fff5df;color:#b77912}.status-delivered{background:#e8f7ef;color:#22834c}.status-preparing{background:#edf1ff;color:#4963d8}.status-cancelled{background:#fff0f0;color:#c44f4f}.actions{border:0;background:transparent;color:#778198;font-size:19px;cursor:pointer;padding:3px 7px;border-radius:5px}.actions:hover{background:#f0f2f8}.table-footer{display:flex;justify-content:space-between;align-items:center;padding:13px 20px;color:#8790a2;font-size:11px;border-top:1px solid #edf0f5}.empty{text-align:center;padding:40px 15px;color:#7f899c;font-size:13px}.lower-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}.quick-card{padding:19px 20px;display:flex;flex-direction:column}.quick-action{display:flex;gap:11px;align-items:center;padding:11px 0;border-top:1px solid #f0f2f6;color:#39455c;font-size:12px}.quick-action .quick-icon{width:32px;height:32px;border-radius:9px;background:#eff2ff;display:grid;place-items:center;color:#4963d8}.quick-action small{display:block;color:#8790a2;font-size:10px;margin-top:3px}.quick-action button{margin-left:auto}.modal-backdrop{position:fixed;inset:0;background:#11182770;display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal-backdrop.open{display:flex}.modal{width:min(560px,100%);background:#fff;border-radius:15px;box-shadow:0 20px 60px #10172a40;overflow:hidden}.modal-head{padding:20px 23px;border-bottom:1px solid #edf0f5;display:flex;justify-content:space-between;align-items:center}.modal-head h2{font-size:17px;margin:0}.close{border:0;background:none;font-size:22px;color:#7b8496;cursor:pointer}.modal-body{padding:20px 23px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:11px;color:#59647a;font-weight:700}.field input,.field select{height:38px;border:1px solid #dfe4ed;border-radius:8px;padding:0 10px;font:inherit;font-size:12px;background:white}.modal-foot{padding:15px 23px;border-top:1px solid #edf0f5;display:flex;justify-content:flex-end;gap:9px}.toast{position:fixed;bottom:22px;right:24px;padding:12px 17px;border-radius:9px;background:#17233d;color:white;font-size:12px;box-shadow:0 8px 25px #10172a30;opacity:0;transform:translateY(8px);transition:.2s;pointer-events:none;z-index:20}.toast.show{opacity:1;transform:translateY(0)}@media(max-width:1050px){.main{padding:25px 24px;margin-left:215px}.sidebar{width:215px}.stats{grid-template-columns:repeat(2,1fr)}.region-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.sidebar{width:62px;padding:20px 9px}.brand{padding:0 3px 28px}.brand span,.nav-link .nav-text,.nav-label,.sidebar-note{display:none}.nav-link{justify-content:center;padding:12px 5px}.main{margin-left:62px;padding:20px 14px 35px}.topbar{align-items:flex-start}.heading{font-size:21px}.today{display:none}.top-right{gap:7px}.button{padding:10px;font-size:11px}.stats{gap:9px}.stat{padding:13px}.stat-value{font-size:23px}.stat-top{font-size:10px}.section-card{padding:16px 13px}.section-heading{align-items:flex-start;flex-direction:column}.region-grid{grid-template-columns:1fr}.region-card{padding:12px}.region-name{min-height:0}.card-header{align-items:flex-start;flex-direction:column}.filters{width:100%}.search-wrap{flex:1}.search{width:100%}.select{max-width:120px}.modal-body{grid-template-columns:1fr}.table-footer{gap:10px;flex-wrap:wrap}}
+    :root {
+      --bg: #f4f6fb;
+      --panel: #ffffff;
+      --panel-soft: #f9fafc;
+      --line: #e8edf5;
+      --text: #1a2338;
+      --muted: #7b8599;
+      --nav: #111b34;
+      --nav-soft: #243253;
+      --primary: #4263eb;
+      --primary-soft: #eef2ff;
+      --transit: #ffefc5;
+      --transit-text: #b47a13;
+      --success: #e7f8ee;
+      --success-text: #1e8c56;
+      --prep: #edf1ff;
+      --prep-text: #4f68da;
+      --danger: #ffe8e8;
+      --danger-text: #c74d4d;
+      --shadow: 0 8px 24px rgba(17, 27, 52, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, "Segoe UI", sans-serif;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    .app { min-height: 100vh; }
+
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 248px;
+      background: var(--nav);
+      color: #dbe4f3;
+      padding: 26px 18px;
+      display: flex;
+      flex-direction: column;
+      z-index: 3;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 10px 32px;
+      color: white;
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
+      background: var(--primary);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 19px;
+    }
+
+    .nav-label {
+      padding: 10px 12px;
+      color: #8a99b8;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+    }
+
+    .nav-link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border: 0;
+      border-radius: 9px;
+      background: transparent;
+      color: #d3dbea;
+      text-align: left;
+      font-size: 13px;
+      cursor: pointer;
+      margin: 2px 0;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      background: var(--nav-soft);
+      color: white;
+    }
+
+    .nav-icon { width: 20px; text-align: center; font-size: 16px; }
+
+    .sidebar-note {
+      margin-top: auto;
+      background: #1a2744;
+      border: 1px solid #2a3858;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 12px;
+      line-height: 1.6;
+      color: #b9c5dc;
+    }
+
+    .sidebar-note strong {
+      display: block;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .main {
+      margin-left: 248px;
+      padding: 30px 38px 48px;
+      max-width: 1700px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin: 0 0 5px;
+    }
+
+    .heading {
+      font-size: 25px;
+      letter-spacing: -0.7px;
+      margin: 0;
+      color: var(--text);
+    }
+
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .today { font-size: 12px; color: #697487; }
+
+    .avatar {
+      width: 37px;
+      height: 37px;
+      background: #e6eaff;
+      color: #3856d8;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .button {
+      border: 0;
+      border-radius: 9px;
+      padding: 11px 15px;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.16s ease;
+    }
+
+    .button-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 6px 18px rgba(66,99,235,0.28);
+    }
+
+    .button-primary:hover { background: #3453d2; transform: translateY(-1px); }
+    .button-light { background: #f0f3f9; color: #34405a; }
+    .button-light:hover { background: #e7ecf6; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+      margin-bottom: 23px;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 18px 19px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #69778d;
+      font-size: 12px;
+    }
+
+    .stat-icon {
+      height: 31px;
+      width: 31px;
+      border-radius: 9px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+    }
+
+    .stat-value {
+      font-size: 27px;
+      font-weight: 750;
+      letter-spacing: -0.8px;
+      margin: 13px 0 3px;
+    }
+
+    .stat-caption {
+      font-size: 11px;
+      color: #8a93a5;
+    }
+
+    .content-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-card { padding: 20px 21px; margin-bottom: 18px; }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 15px;
+      margin: 0;
+      font-weight: 750;
+    }
+
+    .section-desc {
+      font-size: 11px;
+      color: #8790a2;
+      margin: 5px 0 0;
+    }
+
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 11px;
+    }
+
+    .region-card {
+      min-width: 0;
+      width: 100%;
+      text-align: left;
+      background: #fff;
+      border: 1px solid #e7eaf1;
+      border-radius: 10px;
+      padding: 13px 14px;
+      cursor: pointer;
+      transition: 0.16s ease;
+      color: inherit;
+    }
+
+    .region-card:hover {
+      border-color: #9cacf7;
+      box-shadow: 0 5px 15px rgba(39,61,132,0.08);
+      transform: translateY(-1px);
+    }
+
+    .region-card.selected {
+      background: #f0f3ff;
+      border-color: #637ced;
+      box-shadow: 0 0 0 2px rgba(66,99,235,0.1);
+    }
+
+    .region-name {
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 750;
+      color: #35415a;
+      min-height: 34px;
+    }
+
+    .region-count {
+      font-size: 10px;
+      color: #8790a2;
+      margin-top: 8px;
+    }
+
+    .region-count strong {
+      font-size: 13px;
+      color: var(--primary);
+    }
+
+    .region-breakdown {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+      font-size: 9px;
+      color: #7b8598;
+    }
+
+    .region-breakdown span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot-transit { background: #dfa52d; }
+    .dot-delivered { background: #2c9b5b; }
+    .dot-preparing { background: #6479df; }
+
+    .clear-region {
+      display: none;
+    }
+
+    .clear-region.visible { display: inline-flex; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      padding: 19px 21px;
+      border-bottom: 1px solid #edf0f5;
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 750;
+    }
+
+    .card-subtitle {
+      margin: 4px 0 0;
+      color: #8790a2;
+      font-size: 11px;
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .search-wrap { position: relative; }
+    .search-wrap span {
+      position: absolute;
+      left: 11px;
+      top: 8px;
+      color: #8d96a8;
+    }
+
+    .search {
+      height: 35px;
+      width: 225px;
+      padding: 0 11px 0 32px;
+      border: 1px solid #e2e6ee;
+      border-radius: 8px;
+      font-size: 12px;
+      outline: none;
+      background: white;
+    }
+
+    .search:focus, .select:focus, .field input:focus, .field select:focus {
+      border-color: #8397f4;
+      box-shadow: 0 0 0 3px rgba(66,99,235,0.12);
+      outline: none;
+    }
+
+    .select {
+      height: 35px;
+      border: 1px solid #e2e6ee;
+      border-radius: 8px;
+      padding: 0 10px;
+      background: white;
+      color: #525d72;
+      font-size: 11px;
+    }
+
+    .table-scroll { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      white-space: nowrap;
+    }
+
+    th {
+      text-align: left;
+      color: #8790a2;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.45px;
+      padding: 12px 19px;
+      background: #fbfcfe;
+    }
+
+    td {
+      padding: 15px 19px;
+      border-top: 1px solid #f0f2f6;
+      font-size: 12px;
+      color: #404b60;
+    }
+
+    tbody tr:hover { background: #fafbff; }
+
+    .doc-id { font-weight: 750; color: #354fc1; }
+    .destination { font-weight: 650; color: #293449; }
+    .subtext {
+      font-size: 10px;
+      color: #8992a4;
+      margin-top: 4px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 20px;
+      padding: 5px 9px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .pill:before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .status-transit { background: var(--transit); color: var(--transit-text); }
+    .status-delivered { background: var(--success); color: var(--success-text); }
+    .status-preparing { background: var(--prep); color: var(--prep-text); }
+    .status-cancelled { background: var(--danger); color: var(--danger-text); }
+
+    .actions {
+      border: 0;
+      background: transparent;
+      color: #778198;
+      font-size: 19px;
+      cursor: pointer;
+      padding: 3px 7px;
+      border-radius: 5px;
+    }
+
+    .actions:hover { background: #f0f2f8; }
+
+    .table-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 20px;
+      color: #8790a2;
+      font-size: 11px;
+      border-top: 1px solid #edf0f5;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 40px 15px;
+      color: #7f899c;
+      font-size: 13px;
+    }
+
+    .lower-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .quick-card {
+      padding: 19px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .quick-action {
+      display: flex;
+      gap: 11px;
+      align-items: center;
+      padding: 11px 0;
+      border-top: 1px solid #f0f2f6;
+      color: #39455c;
+      font-size: 12px;
+    }
+
+    .quick-action .quick-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: #eff2ff;
+      display: grid;
+      place-items: center;
+      color: #4963d8;
+    }
+
+    .quick-action small {
+      display: block;
+      color: #8790a2;
+      font-size: 10px;
+      margin-top: 3px;
+    }
+
+    .quick-action button { margin-left: auto; }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(17,24,39,0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 10;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      width: min(620px, 100%);
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(16,23,42,0.35);
+      overflow: hidden;
+    }
+
+    .modal-head {
+      padding: 20px 23px;
+      border-bottom: 1px solid #edf0f5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-head h2 {
+      font-size: 17px;
+      margin: 0;
+    }
+
+    .close {
+      border: 0;
+      background: none;
+      font-size: 22px;
+      color: #7b8496;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 20px 23px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      font-size: 11px;
+      color: #59647a;
+      font-weight: 700;
+    }
+
+    .field input, .field select {
+      height: 38px;
+      border: 1px solid #dfe4ed;
+      border-radius: 8px;
+      padding: 0 10px;
+      background: white;
+      font-size: 12px;
+    }
+
+    .modal-foot {
+      padding: 15px 23px;
+      border-top: 1px solid #edf0f5;
+      display: flex;
+      justify-content: flex-end;
+      gap: 9px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      right: 24px;
+      padding: 12px 17px;
+      border-radius: 9px;
+      background: #17233d;
+      color: white;
+      font-size: 12px;
+      box-shadow: 0 8px 25px rgba(16,23,42,0.28);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: 0.2s ease;
+      pointer-events: none;
+      z-index: 20;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1050px) {
+      .main { padding: 25px 24px; margin-left: 215px; }
+      .sidebar { width: 215px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .sidebar {
+        width: 62px;
+        padding: 20px 9px;
+      }
+      .brand { padding: 0 3px 28px; }
+      .brand span, .nav-link .nav-text, .nav-label, .sidebar-note { display: none; }
+      .nav-link { justify-content: center; padding: 12px 5px; }
+      .main { margin-left: 62px; padding: 20px 14px 35px; }
+      .topbar { align-items: flex-start; }
+      .heading { font-size: 21px; }
+      .today { display: none; }
+      .top-right { gap: 7px; }
+      .button { padding: 10px; font-size: 11px; }
+      .stats { gap: 9px; }
+      .stat { padding: 13px; }
+      .stat-value { font-size: 23px; }
+      .stat-top { font-size: 10px; }
+      .section-card { padding: 16px 13px; }
+      .section-heading { align-items: flex-start; flex-direction: column; }
+      .region-grid { grid-template-columns: 1fr; }
+      .region-name { min-height: 0; }
+      .card-header { align-items: flex-start; flex-direction: column; }
+      .filters { width: 100%; }
+      .search-wrap { flex: 1; }
+      .search { width: 100%; }
+      .select { max-width: 120px; }
+      .modal-body { grid-template-columns: 1fr; }
+      .table-footer { gap: 10px; flex-wrap: wrap; }
+    }
   </style>
 </head>
 <body>
@@ -18,85 +693,506 @@
       <button class="nav-link" data-view="dispatches"><span class="nav-icon">▤</span><span class="nav-text">İrsaliyeler</span></button>
       <button class="nav-link" data-view="regions"><span class="nav-icon">⌖</span><span class="nav-text">Bölgeler</span></button>
       <button class="nav-link" data-view="materials"><span class="nav-icon">▧</span><span class="nav-text">Malzemeler</span></button>
-      <div class="sidebar-note"><strong>Sevkiyatlar tek yerde</strong>Dağıtım bölgelerine gönderilen irsaliye ve malzemeleri buradan takip edin.</div>
+      <div class="sidebar-note"><strong>Sevkiyatlar tek yerde</strong>Sevk edecek ve sevk edilecek bölgeleri tek ekran üzerinden takip edin.</div>
     </aside>
+
     <main class="main">
       <header class="topbar">
-        <div><p class="eyebrow">OPERASYON YÖNETİMİ</p><h1 class="heading">Sevkiyat Takibi</h1></div>
-        <div class="top-right"><span class="today" id="today"></span><button class="button button-primary" id="newDispatch">＋ Yeni irsaliye</button><div class="avatar">SM</div></div>
+        <div>
+          <p class="eyebrow">OPERASYON YÖNETİMİ</p>
+          <h1 class="heading">Sevkiyat Takibi</h1>
+        </div>
+        <div class="top-right">
+          <span class="today" id="today"></span>
+          <button class="button button-primary" id="newDispatch">＋ Yeni irsaliye</button>
+          <div class="avatar">SM</div>
+        </div>
       </header>
+
       <section class="stats">
         <article class="stat"><div class="stat-top">Toplam irsaliye <span class="stat-icon">▤</span></div><div class="stat-value" id="totalStat">0</div><div class="stat-caption">Sistemde kayıtlı sevkiyat</div></article>
         <article class="stat"><div class="stat-top">Yolda <span class="stat-icon">⇢</span></div><div class="stat-value" id="transitStat">0</div><div class="stat-caption">Teslimat bekleniyor</div></article>
         <article class="stat"><div class="stat-top">Teslim edildi <span class="stat-icon">✓</span></div><div class="stat-value" id="deliveredStat">0</div><div class="stat-caption">Varış bölgesine ulaştı</div></article>
         <article class="stat"><div class="stat-top">Dağıtım bölgesi <span class="stat-icon">⌖</span></div><div class="stat-value" id="regionTotal">24</div><div class="stat-caption">Tanımlı Aksa Doğalgaz bölgesi</div></article>
       </section>
+
       <section class="content-card section-card" id="regionsSection">
-        <div class="section-heading"><div><h2 class="section-title">Bölge bazlı sevkiyat kartları</h2><p class="section-desc">Bir bölgeyi seçerek o bölgenin irsaliye ve teslimat kayıtlarını görüntüleyin.</p></div><button class="button button-light clear-region" id="clearRegion">Tüm bölgeler</button></div>
+        <div class="section-heading">
+          <div>
+            <h2 class="section-title">Bölge bazlı sevkiyat kartları</h2>
+            <p class="section-desc">Sevk edecek ve sevk edilecek bölge bazında genel görünüm.</p>
+          </div>
+          <button class="button button-light clear-region" id="clearRegion">Tüm bölgeler</button>
+        </div>
         <div class="region-grid" id="regionList"></div>
       </section>
+
       <section class="content-card" id="deliverySection">
-        <div class="card-header"><div><h2 class="card-title">Teslimat takip tablosu</h2><p class="card-subtitle" id="tableSubtitle">İrsaliye bazında sevk miktarı ve teslimat durumları.</p></div><div class="filters"><div class="search-wrap"><span>⌕</span><input id="searchInput" class="search" placeholder="İrsaliye veya bölge ara..." /></div><select id="statusFilter" class="select"><option value="all">Tüm durumlar</option><option value="Yolda">Yolda</option><option value="Teslim edildi">Teslim edildi</option><option value="Hazırlanıyor">Hazırlanıyor</option><option value="İptal edildi">İptal edildi</option></select></div></div>
-        <div class="table-scroll"><table><thead><tr><th>İRSALİYE NO</th><th>HEDEF BÖLGE</th><th>SEVK TARİHİ</th><th>MALZEME KALEMİ</th><th>TOPLAM MİKTAR</th><th>TESLİMAT DURUMU</th><th></th></tr></thead><tbody id="dispatchRows"></tbody></table><div id="emptyState" class="empty" hidden>Seçilen filtrelerle eşleşen irsaliye bulunamadı.</div></div>
-        <div class="table-footer"><span id="rowCount"></span><span>Durumu güncellemek için satır sonundaki ··· düğmesini kullanın</span></div>
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Teslimat takip tablosu</h2>
+            <p class="card-subtitle" id="tableSubtitle">İrsaliye bazında sevk miktarı ve teslimat durumları.</p>
+          </div>
+          <div class="filters">
+            <div class="search-wrap"><span>⌕</span><input id="searchInput" class="search" placeholder="İrsaliye veya bölge ara..." /></div>
+            <select id="statusFilter" class="select">
+              <option value="all">Tüm durumlar</option>
+              <option value="Hazırlanıyor">Hazırlanıyor</option>
+              <option value="Yolda">Yolda</option>
+              <option value="Teslim edildi">Teslim edildi</option>
+              <option value="İptal edildi">İptal edildi</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>İRSALİYE NO</th>
+                <th>SEVK EDEN BÖLGE</th>
+                <th>SEVK EDİLECEK BÖLGE</th>
+                <th>SEVK TARİHİ</th>
+                <th>MALZEME KALEMİ</th>
+                <th>TOPLAM MİKTAR</th>
+                <th>TESLİMAT DURUMU</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="dispatchRows"></tbody>
+          </table>
+          <div id="emptyState" class="empty" hidden>Seçilen filtrelerle eşleşen irsaliye bulunamadı.</div>
+        </div>
+
+        <div class="table-footer">
+          <span id="rowCount"></span>
+          <span>Durumu güncellemek için satır sonundaki ··· düğmesini kullanın</span>
+        </div>
       </section>
+
       <div class="lower-grid">
-        <section class="content-card quick-card"><h2 class="section-title">Hızlı işlemler</h2><p class="section-desc">Sık kullanılan işlemlere kolay erişim</p><div class="quick-action"><span class="quick-icon">＋</span><div>Sevkiyat oluştur<small>Yeni irsaliye kaydı ekle</small></div><button class="button button-light" id="quickNew">Oluştur</button></div><div class="quick-action"><span class="quick-icon">▧</span><div>Malzeme listesi<small>200+ kalem için takip</small></div><button class="button button-light" id="materialsButton">Görüntüle</button></div></section>
+        <section class="content-card quick-card">
+          <h2 class="section-title">Hızlı işlemler</h2>
+          <p class="section-desc">Sık kullanılan işlemlere kolay erişim</p>
+          <div class="quick-action">
+            <span class="quick-icon">＋</span>
+            <div>Sevkiyat oluştur<small>Yeni irsaliye kaydı ekle</small></div>
+            <button class="button button-light" id="quickNew">Oluştur</button>
+          </div>
+          <div class="quick-action">
+            <span class="quick-icon">▧</span>
+            <div>Malzeme listesi<small>200+ kalem için takip</small></div>
+            <button class="button button-light" id="materialsButton">Görüntüle</button>
+          </div>
+        </section>
       </div>
     </main>
   </div>
-  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><form class="modal" id="dispatchForm"><div class="modal-head"><h2 id="modalTitle">Yeni irsaliye oluştur</h2><button class="close" type="button" id="closeModal" aria-label="Kapat">×</button></div><div class="modal-body"><div class="field"><label for="docNumber">İrsaliye numarası</label><input id="docNumber" required placeholder="Örn. IRS-2026-001" /></div><div class="field"><label for="regionSelect">Hedef bölge</label><select id="regionSelect" required></select></div><div class="field"><label for="dispatchDate">Sevk tarihi</label><input id="dispatchDate" type="date" required /></div><div class="field"><label for="itemCount">Malzeme kalemi sayısı</label><input id="itemCount" type="number" min="1" max="250" required placeholder="Örn. 12" /></div><div class="field"><label for="quantity">Toplam miktar</label><input id="quantity" type="number" min="1" required placeholder="Örn. 480" /></div><div class="field"><label for="dispatchStatus">Durum</label><select id="dispatchStatus"><option>Hazırlanıyor</option><option>Yolda</option><option>Teslim edildi</option></select></div></div><div class="modal-foot"><button type="button" class="button button-light" id="cancelModal">Vazgeç</button><button type="submit" class="button button-primary">Kaydet</button></div></form></div>
+
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <form class="modal" id="dispatchForm">
+      <div class="modal-head">
+        <h2 id="modalTitle">Yeni irsaliye oluştur</h2>
+        <button class="close" type="button" id="closeModal" aria-label="Kapat">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="field">
+          <label for="docNumber">İrsaliye numarası</label>
+          <input id="docNumber" required placeholder="Örn. IRS-2026-001" />
+        </div>
+
+        <div class="field">
+          <label for="dispatchDate">Sevk tarihi</label>
+          <input id="dispatchDate" type="date" required />
+        </div>
+
+        <div class="field">
+          <label for="sourceRegion">Sevk edecek bölge</label>
+          <select id="sourceRegion" required></select>
+        </div>
+
+        <div class="field">
+          <label for="targetRegion">Sevk edilecek bölge</label>
+          <select id="targetRegion" required></select>
+        </div>
+
+        <div class="field full">
+          <label for="materialName">Malzeme kalemi</label>
+          <select id="materialName" required>
+            <option value="">Malzeme seçin</option>
+            <option>Doğalgaz</option>
+            <option>Metal boru</option>
+            <option>Regülatör</option>
+            <option>Basınç göstergesi</option>
+            <option>Vanalar</option>
+            <option>Kompresör</option>
+            <option>Manometre</option>
+            <option>Gaz tedarik ekipmanı</option>
+            <option>Kontrol devresi</option>
+            <option>İzleme cihazı</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="itemCount">Kalem sayısı</label>
+          <input id="itemCount" type="number" min="1" max="250" required placeholder="Örn. 12" />
+        </div>
+
+        <div class="field">
+          <label for="quantity">Toplam miktar</label>
+          <input id="quantity" type="number" min="1" required placeholder="Örn. 480" />
+        </div>
+
+        <div class="field full">
+          <label for="dispatchStatus">Durum</label>
+          <select id="dispatchStatus">
+            <option>Hazırlanıyor</option>
+            <option>Yolda</option>
+            <option>Teslim edildi</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <button type="button" class="button button-light" id="cancelModal">Vazgeç</button>
+        <button type="submit" class="button button-primary">Kaydet</button>
+      </div>
+    </form>
+  </div>
+
   <div class="toast" id="toast"></div>
+
   <script>
-    const regions=[
-      'Aksa Doğalgaz Afyon','Aksa Doğalgaz Ağrı','Aksa Doğalgaz Balıkesir','Aksa Doğalgaz Bandırma',
-      'Aksa Doğalgaz Bilecik Bolu','Aksa Doğalgaz Bursa','Aksa Doğalgaz Çanakkale','Aksa Doğalgaz Çukurova',
-      'Aksa Doğalgaz Düzce Ereğli','Aksa Doğalgaz Elazığ','Aksa Doğalgaz Gemlik','Aksa Doğalgaz Gümüşhane Bayburt',
-      'Aksa Doğalgaz Kayseri','Aksa Doğalgaz Malatya','Aksa Doğalgaz Manisa','Aksa Doğalgaz Mustafa Kemalpaşa Susurluk Karacabey',
-      'Aksa Doğalgaz Ordu Giresun','Aksa Doğalgaz Sakarya','Aksa Doğalgaz Siirt Batman','Aksa Doğalgaz Sivas',
-      'Aksa Doğalgaz Şanlıurfa','Aksa Doğalgaz Tokat Amasya','Aksa Doğalgaz Trabzon Rize','Aksa Doğalgaz Van'
+    const regions = [
+      'Aksa Doğalgaz Afyon',
+      'Aksa Doğalgaz Ağrı',
+      'Aksa Doğalgaz Balıkesir',
+      'Aksa Doğalgaz Bandırma',
+      'Aksa Doğalgaz Bilecik Bolu',
+      'Aksa Doğalgaz Bursa',
+      'Aksa Doğalgaz Çanakkale',
+      'Aksa Doğalgaz Çukurova',
+      'Aksa Doğalgaz Düzce Ereğli',
+      'Aksa Doğalgaz Elazığ',
+      'Aksa Doğalgaz Gemlik',
+      'Aksa Doğalgaz Gümüşhane Bayburt',
+      'Aksa Doğalgaz Kayseri',
+      'Aksa Doğalgaz Malatya',
+      'Aksa Doğalgaz Manisa',
+      'Aksa Doğalgaz Mustafa Kemalpaşa Susurluk Karacabey',
+      'Aksa Doğalgaz Ordu Giresun',
+      'Aksa Doğalgaz Sakarya',
+      'Aksa Doğalgaz Siirt Batman',
+      'Aksa Doğalgaz Sivas',
+      'Aksa Doğalgaz Şanlıurfa',
+      'Aksa Doğalgaz Tokat Amasya',
+      'Aksa Doğalgaz Trabzon Rize',
+      'Aksa Doğalgaz Van'
     ];
-    const starter=[
-      {id:'IRS-2026-0142',region:'Aksa Doğalgaz Afyon',date:'2026-11-17',items:18,quantity:420,status:'Yolda'},
-      {id:'IRS-2026-0141',region:'Aksa Doğalgaz Bursa',date:'2026-11-16',items:24,quantity:685,status:'Teslim edildi'},
-      {id:'IRS-2026-0140',region:'Aksa Doğalgaz Çukurova',date:'2026-11-16',items:12,quantity:260,status:'Hazırlanıyor'},
-      {id:'IRS-2026-0139',region:'Aksa Doğalgaz Kayseri',date:'2026-11-15',items:31,quantity:910,status:'Yolda'},
-      {id:'IRS-2026-0138',region:'Aksa Doğalgaz Van',date:'2026-11-14',items:9,quantity:175,status:'Teslim edildi'},
-      {id:'IRS-2026-0137',region:'Aksa Doğalgaz Trabzon Rize',date:'2026-11-13',items:16,quantity:348,status:'Yolda'}
+
+    const starter = [
+      {
+        id: 'IRS-2026-0142',
+        sourceRegion: 'Merkez Depo',
+        targetRegion: 'Aksa Doğalgaz Afyon',
+        date: '2026-11-17',
+        material: 'Doğalgaz',
+        items: 18,
+        quantity: 420,
+        status: 'Yolda'
+      },
+      {
+        id: 'IRS-2026-0141',
+        sourceRegion: 'Merkez Depo',
+        targetRegion: 'Aksa Doğalgaz Bursa',
+        date: '2026-11-16',
+        material: 'Metal boru',
+        items: 24,
+        quantity: 685,
+        status: 'Teslim edildi'
+      },
+      {
+        id: 'IRS-2026-0140',
+        sourceRegion: 'Merkez Depo',
+        targetRegion: 'Aksa Doğalgaz Çukurova',
+        date: '2026-11-16',
+        material: 'Regülatör',
+        items: 12,
+        quantity: 260,
+        status: 'Hazırlanıyor'
+      },
+      {
+        id: 'IRS-2026-0139',
+        sourceRegion: 'Merkez Depo',
+        targetRegion: 'Aksa Doğalgaz Kayseri',
+        date: '2026-11-15',
+        material: 'Manometre',
+        items: 31,
+        quantity: 910,
+        status: 'Yolda'
+      },
+      {
+        id: 'IRS-2026-0138',
+        sourceRegion: 'Merkez Depo',
+        targetRegion: 'Aksa Doğalgaz Van',
+        date: '2026-11-14',
+        material: 'Vanalar',
+        items: 9,
+        quantity: 175,
+        status: 'Teslim edildi'
+      },
+      {
+        id: 'IRS-2026-0137',
+        sourceRegion: 'Merkez Depo',
+        targetRegion: 'Aksa Doğalgaz Trabzon Rize',
+        date: '2026-11-13',
+        material: 'İzleme cihazı',
+        items: 16,
+        quantity: 348,
+        status: 'Yolda'
+      }
     ];
-    let dispatches;try{dispatches=JSON.parse(localStorage.getItem('sevkiyat-dispatches'))||starter}catch{dispatches=starter}
-    let selectedRegion='';
-    const formatDate=d=>{if(!d)return '—';const [y,m,day]=d.split('-');return `${day}.${m}.${y}`};
-    const save=()=>localStorage.setItem('sevkiyat-dispatches',JSON.stringify(dispatches));
-    function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-    function statusClass(s){return s==='Yolda'?'status-transit':s==='Teslim edildi'?'status-delivered':s==='İptal edildi'?'status-cancelled':'status-preparing'}
-    function render(){
-      const q=document.getElementById('searchInput').value.trim().toLocaleLowerCase('tr');
-      const filter=document.getElementById('statusFilter').value;
-      const filtered=dispatches.filter(d=>(!selectedRegion||d.region===selectedRegion)&&(filter==='all'||d.status===filter)&&`${d.id} ${d.region} ${d.status}`.toLocaleLowerCase('tr').includes(q));
-      document.getElementById('dispatchRows').innerHTML=filtered.map(d=>`<tr><td><span class="doc-id">${escapeHtml(d.id)}</span></td><td><div class="destination">${escapeHtml(d.region)}</div><div class="subtext">Bölge teslimatı</div></td><td>${formatDate(d.date)}</td><td>${Number(d.items).toLocaleString('tr-TR')} kalem</td><td>${Number(d.quantity).toLocaleString('tr-TR')} adet</td><td><span class="pill ${statusClass(d.status)}">${escapeHtml(d.status)}</span></td><td><button class="actions" data-id="${escapeHtml(d.id)}" title="Durumu güncelle" aria-label="Durumu güncelle">···</button></td></tr>`).join('');
-      document.getElementById('emptyState').hidden=filtered.length>0;
-      document.getElementById('rowCount').textContent=`${filtered.length} irsaliye listeleniyor`;
-      document.getElementById('totalStat').textContent=dispatches.length;
-      document.getElementById('transitStat').textContent=dispatches.filter(d=>d.status==='Yolda').length;
-      document.getElementById('deliveredStat').textContent=dispatches.filter(d=>d.status==='Teslim edildi').length;
-      document.getElementById('regionList').innerHTML=regions.map(r=>{const shipments=dispatches.filter(d=>d.region===r);const transit=shipments.filter(d=>d.status==='Yolda').length;const delivered=shipments.filter(d=>d.status==='Teslim edildi').length;const preparing=shipments.filter(d=>d.status==='Hazırlanıyor').length;return `<button type="button" class="region-card ${selectedRegion===r?'selected':''}" data-region="${escapeHtml(r)}" aria-pressed="${selectedRegion===r}"><div class="region-name">${escapeHtml(r)}</div><div class="region-count"><strong>${shipments.length}</strong> sevkiyat</div><div class="region-breakdown"><span><i class="dot dot-transit"></i>${transit} yolda</span><span><i class="dot dot-delivered"></i>${delivered} teslim</span><span><i class="dot dot-preparing"></i>${preparing} hazırlık</span></div></button>`}).join('');
-      document.getElementById('clearRegion').classList.toggle('visible',Boolean(selectedRegion));
-      document.getElementById('tableSubtitle').textContent=selectedRegion?`${selectedRegion} bölgesi için sevk miktarı ve teslimat kayıtları.`:'İrsaliye bazında sevk miktarı ve teslimat durumları.';
+
+    let dispatches = starter;
+    let selectedRegion = '';
+
+    try {
+      const saved = JSON.parse(localStorage.getItem('sevkiyat-dispatches'));
+      if (saved && Array.isArray(saved) && saved.length) {
+        dispatches = saved;
+      }
+    } catch (error) {
+      dispatches = starter;
     }
-    function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
-    const backdrop=document.getElementById('modalBackdrop');function openModal(){document.getElementById('dispatchDate').value=new Date().toISOString().slice(0,10);if(selectedRegion)document.getElementById('regionSelect').value=selectedRegion;backdrop.classList.add('open');document.getElementById('docNumber').focus()}function closeModal(){backdrop.classList.remove('open')}
-    document.getElementById('regionSelect').innerHTML='<option value="">Bölge seçin</option>'+regions.map(r=>`<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`).join('');
-    document.getElementById('today').textContent=new Intl.DateTimeFormat('tr-TR',{day:'numeric',month:'long',year:'numeric'}).format(new Date());
-    document.getElementById('newDispatch').onclick=openModal;document.getElementById('quickNew').onclick=openModal;document.getElementById('closeModal').onclick=closeModal;document.getElementById('cancelModal').onclick=closeModal;
-    backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-    document.getElementById('searchInput').addEventListener('input',render);document.getElementById('statusFilter').addEventListener('change',render);
-    document.getElementById('regionList').addEventListener('click',e=>{const card=e.target.closest('[data-region]');if(!card)return;selectedRegion=selectedRegion===card.dataset.region?'':card.dataset.region;render();document.getElementById('deliverySection').scrollIntoView({behavior:'smooth',block:'start'});});
-    document.getElementById('clearRegion').addEventListener('click',()=>{selectedRegion='';render()});
-    document.getElementById('dispatchForm').addEventListener('submit',e=>{e.preventDefault();const d={id:document.getElementById('docNumber').value.trim(),region:document.getElementById('regionSelect').value,date:document.getElementById('dispatchDate').value,items:Number(document.getElementById('itemCount').value),quantity:Number(document.getElementById('quantity').value),status:document.getElementById('dispatchStatus').value};if(dispatches.some(x=>x.id.toLocaleLowerCase('tr')===d.id.toLocaleLowerCase('tr'))){toast('Bu irsaliye numarası zaten kayıtlı.');return}dispatches.unshift(d);save();selectedRegion=d.region;render();e.target.reset();closeModal();toast('İrsaliye başarıyla kaydedildi.');});
-    document.getElementById('dispatchRows').addEventListener('click',e=>{const btn=e.target.closest('[data-id]');if(!btn)return;const d=dispatches.find(x=>x.id===btn.dataset.id);const statuses=['Hazırlanıyor','Yolda','Teslim edildi','İptal edildi'];d.status=statuses[(statuses.indexOf(d.status)+1)%statuses.length];save();render();toast(`${d.id}: ${d.status}`)});
-    document.querySelectorAll('.nav-link').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.nav-link').forEach(x=>x.classList.remove('active'));b.classList.add('active');if(b.dataset.view==='regions'){document.getElementById('regionsSection').scrollIntoView({behavior:'smooth',block:'start'})}else if(b.dataset.view==='materials'){toast('Malzeme kataloğu sonraki adımda eklenecek.')}else if(b.dataset.view==='dispatches'){document.getElementById('deliverySection').scrollIntoView({behavior:'smooth',block:'start'})}else window.scrollTo({top:0,behavior:'smooth'})}));
-    document.getElementById('materialsButton').onclick=()=>toast('Malzeme kataloğu sonraki adımda eklenecek.');
+
+    const save = () => localStorage.setItem('sevkiyat-dispatches', JSON.stringify(dispatches));
+
+    function formatDate(value) {
+      if (!value) return '—';
+      const [y, m, d] = value.split('-');
+      return `${d}.${m}.${y}`;
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[char]));
+    }
+
+    function statusClass(status) {
+      if (status === 'Yolda') return 'status-transit';
+      if (status === 'Teslim edildi') return 'status-delivered';
+      if (status === 'İptal edildi') return 'status-cancelled';
+      return 'status-preparing';
+    }
+
+    function fillSelects() {
+      const sourceSelect = document.getElementById('sourceRegion');
+      const targetSelect = document.getElementById('targetRegion');
+
+      const sourceOptions = ['<option value="">Sevk eden bölge seçin</option>']
+        .concat(['Merkez Depo', ...regions].map(r => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`))
+        .join('');
+
+      const targetOptions = ['<option value="">Sevk edilecek bölge seçin</option>']
+        .concat(regions.map(r => `<option value="${escapeHtml(r)}">${escapeHtml(r)}</option>`))
+        .join('');
+
+      sourceSelect.innerHTML = sourceOptions;
+      targetSelect.innerHTML = targetOptions;
+    }
+
+    function render() {
+      const q = document.getElementById('searchInput').value.trim().toLocaleLowerCase('tr');
+      const filter = document.getElementById('statusFilter').value;
+
+      const filtered = dispatches.filter(d => {
+        const matchesRegion = !selectedRegion || d.targetRegion === selectedRegion || d.sourceRegion === selectedRegion;
+        const matchesStatus = filter === 'all' || d.status === filter;
+        const searchText = `${d.id} ${d.sourceRegion} ${d.targetRegion} ${d.status} ${d.material}`.toLocaleLowerCase('tr');
+        const matchesQuery = !q || searchText.includes(q);
+        return matchesRegion && matchesStatus && matchesQuery;
+      });
+
+      document.getElementById('dispatchRows').innerHTML = filtered.map(d => `
+        <tr>
+          <td><span class="doc-id">${escapeHtml(d.id)}</span></td>
+          <td><div class="destination">${escapeHtml(d.sourceRegion)}</div><div class="subtext">Sevk eden</div></td>
+          <td><div class="destination">${escapeHtml(d.targetRegion)}</div><div class="subtext">Sevk edilecek</div></td>
+          <td>${formatDate(d.date)}</td>
+          <td>${escapeHtml(d.material)}</td>
+          <td>${Number(d.quantity).toLocaleString('tr-TR')} adet</td>
+          <td><span class="pill ${statusClass(d.status)}">${escapeHtml(d.status)}</span></td>
+          <td><button class="actions" data-id="${escapeHtml(d.id)}" title="Durumu güncelle" aria-label="Durumu güncelle">···</button></td>
+        </tr>
+      `).join('');
+
+      document.getElementById('emptyState').hidden = filtered.length > 0;
+      document.getElementById('rowCount').textContent = `${filtered.length} irsaliye listeleniyor`;
+      document.getElementById('totalStat').textContent = dispatches.length;
+      document.getElementById('transitStat').textContent = dispatches.filter(d => d.status === 'Yolda').length;
+      document.getElementById('deliveredStat').textContent = dispatches.filter(d => d.status === 'Teslim edildi').length;
+      document.getElementById('regionTotal').textContent = regions.length;
+
+      document.getElementById('regionList').innerHTML = regions.map(region => {
+        const shipments = dispatches.filter(d => d.targetRegion === region || d.sourceRegion === region);
+        const transit = shipments.filter(d => d.status === 'Yolda').length;
+        const delivered = shipments.filter(d => d.status === 'Teslim edildi').length;
+        const preparing = shipments.filter(d => d.status === 'Hazırlanıyor').length;
+
+        return `
+          <button type="button" class="region-card ${selectedRegion === region ? 'selected' : ''}" data-region="${escapeHtml(region)}" aria-pressed="${selectedRegion === region}">
+            <div class="region-name">${escapeHtml(region)}</div>
+            <div class="region-count"><strong>${shipments.length}</strong> sevkiyat</div>
+            <div class="region-breakdown">
+              <span><i class="dot dot-transit"></i>${transit} yolda</span>
+              <span><i class="dot dot-delivered"></i>${delivered} teslim</span>
+              <span><i class="dot dot-preparing"></i>${preparing} hazırlık</span>
+            </div>
+          </button>
+        `;
+      }).join('');
+
+      const clearButton = document.getElementById('clearRegion');
+      clearButton.classList.toggle('visible', Boolean(selectedRegion));
+
+      document.getElementById('tableSubtitle').textContent = selectedRegion
+        ? `${selectedRegion} bölgesi için sevk miktarı ve teslimat kayıtları.`
+        : 'İrsaliye bazında sevk miktarı ve teslimat durumları.';
+    }
+
+    function toast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2600);
+    }
+
+    const backdrop = document.getElementById('modalBackdrop');
+
+    function openModal() {
+      document.getElementById('dispatchDate').value = new Date().toISOString().slice(0, 10);
+      if (selectedRegion) {
+        document.getElementById('targetRegion').value = selectedRegion;
+      }
+      backdrop.classList.add('open');
+      document.getElementById('docNumber').focus();
+    }
+
+    function closeModal() {
+      backdrop.classList.remove('open');
+      document.getElementById('dispatchForm').reset();
+    }
+
+    document.getElementById('today').textContent = new Intl.DateTimeFormat('tr-TR', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    }).format(new Date());
+
+    document.getElementById('newDispatch').onclick = openModal;
+    document.getElementById('quickNew').onclick = openModal;
+    document.getElementById('closeModal').onclick = closeModal;
+    document.getElementById('cancelModal').onclick = closeModal;
+    backdrop.addEventListener('click', e => { if (e.target === backdrop) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    document.getElementById('searchInput').addEventListener('input', render);
+    document.getElementById('statusFilter').addEventListener('change', render);
+
+    document.getElementById('regionList').addEventListener('click', e => {
+      const card = e.target.closest('[data-region]');
+      if (!card) return;
+      const region = card.dataset.region;
+      selectedRegion = selectedRegion === region ? '' : region;
+      render();
+      document.getElementById('deliverySection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('clearRegion').addEventListener('click', () => {
+      selectedRegion = '';
+      render();
+    });
+
+    document.getElementById('dispatchForm').addEventListener('submit', e => {
+      e.preventDefault();
+
+      const sourceRegion = document.getElementById('sourceRegion').value;
+      const targetRegion = document.getElementById('targetRegion').value;
+      const material = document.getElementById('materialName').value;
+      const date = document.getElementById('dispatchDate').value;
+      const id = document.getElementById('docNumber').value.trim();
+      const items = Number(document.getElementById('itemCount').value);
+      const quantity = Number(document.getElementById('quantity').value);
+      const status = document.getElementById('dispatchStatus').value;
+
+      if (!id || !sourceRegion || !targetRegion || !material || !date || !items || !quantity) {
+        toast('Lütfen tüm alanları doldurun.');
+        return;
+      }
+
+      if (dispatches.some(d => d.id.toLocaleLowerCase('tr') === id.toLocaleLowerCase('tr')) ) {
+        toast('Bu irsaliye numarası daha önce kaydedilmiş.');
+        return;
+      }
+
+      const row = {
+        id,
+        sourceRegion,
+        targetRegion,
+        date,
+        material,
+        items,
+        quantity,
+        status
+      };
+
+      dispatches.unshift(row);
+      save();
+      selectedRegion = targetRegion;
+      render();
+      closeModal();
+      toast('İrsaliye başarıyla kaydedildi.');
+    });
+
+    document.getElementById('dispatchRows').addEventListener('click', e => {
+      const btn = e.target.closest('[data-id]');
+      if (!btn) return;
+
+      const d = dispatches.find(item => item.id === btn.dataset.id);
+      if (!d) return;
+
+      const statuses = ['Hazırlanıyor', 'Yolda', 'Teslim edildi', 'İptal edildi'];
+      const currentIndex = statuses.indexOf(d.status);
+      d.status = statuses[(currentIndex + 1) % statuses.length];
+      save();
+      render();
+      toast(`${d.id}: ${d.status}`);
+    });
+
+    document.querySelectorAll('.nav-link').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+
+        if (button.dataset.view === 'regions') {
+          document.getElementById('regionsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (button.dataset.view === 'dispatches') {
+          document.getElementById('deliverySection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (button.dataset.view === 'materials') {
+          toast('Malzeme kataloğu sonraki adımda eklenecek.');
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    });
+
+    document.getElementById('materialsButton').onclick = () => toast('Malzeme kataloğu sonraki adımda eklenecek.');
+
+    fillSelects();
     render();
   </script>
 </body>
