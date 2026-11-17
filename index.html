@@ -501,6 +501,67 @@
       font-size: 13px;
     }
 
+    .route-panel {
+      margin-top: 18px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 18px 20px;
+    }
+
+    .route-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .route-box {
+      background: white;
+      border: 1px solid #ebeff6;
+      border-radius: 10px;
+      padding: 12px 10px;
+      min-height: 110px;
+    }
+
+    .route-step {
+      font-size: 10px;
+      color: #71809d;
+      font-weight: 700;
+      letter-spacing: 0.35px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .route-ids {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .route-id {
+      display: inline-block;
+      background: #eef3ff;
+      color: #425bd7;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 5px 9px;
+    }
+
+    .route-empty {
+      color: #a0a9ba;
+      font-size: 11px;
+      font-style: italic;
+    }
+
     .lower-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -650,6 +711,7 @@
       .sidebar { width: 215px; }
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 700px) {
@@ -679,6 +741,7 @@
       .search-wrap { flex: 1; }
       .search { width: 100%; }
       .select { max-width: 120px; }
+      .route-grid { grid-template-columns: 1fr; }
       .modal-body { grid-template-columns: 1fr; }
       .table-footer { gap: 10px; flex-wrap: wrap; }
     }
@@ -755,6 +818,7 @@
                 <th>SEVK TARİHİ</th>
                 <th>MALZEME KALEMİ</th>
                 <th>TOPLAM MİKTAR</th>
+                <th>YOL ADIMI</th>
                 <th>TESLİMAT DURUMU</th>
                 <th></th>
               </tr>
@@ -768,6 +832,14 @@
           <span id="rowCount"></span>
           <span>Durumu güncellemek için satır sonundaki ··· düğmesini kullanın</span>
         </div>
+      </section>
+
+      <section class="route-panel">
+        <div class="route-panel-header">
+          <h2 class="section-title">Yol Adımı Takibi</h2>
+          <span class="card-subtitle">İrsaliye numarası adım bazında görünür</span>
+        </div>
+        <div class="route-grid" id="routeSummary"></div>
       </section>
 
       <div class="lower-grid">
@@ -845,6 +917,17 @@
         </div>
 
         <div class="field full">
+          <label for="routeStep">Yol adımı</label>
+          <select id="routeStep">
+            <option>Depodan çıktı</option>
+            <option>Yol aşaması 1</option>
+            <option>Yol aşaması 2</option>
+            <option>Bölgeye ulaştı</option>
+            <option>Teslimat tamamlandı</option>
+          </select>
+        </div>
+
+        <div class="field full">
           <label for="dispatchStatus">Durum</label>
           <select id="dispatchStatus">
             <option>Hazırlanıyor</option>
@@ -891,6 +974,14 @@
       'Aksa Doğalgaz Van'
     ];
 
+    const routeSteps = [
+      'Depodan çıktı',
+      'Yol aşaması 1',
+      'Yol aşaması 2',
+      'Bölgeye ulaştı',
+      'Teslimat tamamlandı'
+    ];
+
     const starter = [
       {
         id: 'IRS-2026-0142',
@@ -900,7 +991,8 @@
         material: 'Doğalgaz',
         items: 18,
         quantity: 420,
-        status: 'Yolda'
+        status: 'Yolda',
+        routeStep: 'Yol aşaması 1'
       },
       {
         id: 'IRS-2026-0141',
@@ -910,7 +1002,8 @@
         material: 'Metal boru',
         items: 24,
         quantity: 685,
-        status: 'Teslim edildi'
+        status: 'Teslim edildi',
+        routeStep: 'Teslimat tamamlandı'
       },
       {
         id: 'IRS-2026-0140',
@@ -920,7 +1013,8 @@
         material: 'Regülatör',
         items: 12,
         quantity: 260,
-        status: 'Hazırlanıyor'
+        status: 'Hazırlanıyor',
+        routeStep: 'Depodan çıktı'
       },
       {
         id: 'IRS-2026-0139',
@@ -930,7 +1024,8 @@
         material: 'Manometre',
         items: 31,
         quantity: 910,
-        status: 'Yolda'
+        status: 'Yolda',
+        routeStep: 'Bölgeye ulaştı'
       },
       {
         id: 'IRS-2026-0138',
@@ -940,7 +1035,8 @@
         material: 'Vanalar',
         items: 9,
         quantity: 175,
-        status: 'Teslim edildi'
+        status: 'Teslim edildi',
+        routeStep: 'Teslimat tamamlandı'
       },
       {
         id: 'IRS-2026-0137',
@@ -950,7 +1046,8 @@
         material: 'İzleme cihazı',
         items: 16,
         quantity: 348,
-        status: 'Yolda'
+        status: 'Yolda',
+        routeStep: 'Yol aşaması 2'
       }
     ];
 
@@ -991,6 +1088,20 @@
       return 'status-preparing';
     }
 
+    function routeSummaryHTML() {
+      return routeSteps.map(step => {
+        const ids = dispatches.filter(d => d.routeStep === step).map(d => d.id);
+        return `
+          <div class="route-box">
+            <div class="route-step">${escapeHtml(step)}</div>
+            <div class="route-ids">
+              ${ids.length ? ids.map(id => `<span class="route-id">${escapeHtml(id)}</span>`).join('') : '<span class="route-empty">-</span>'}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
     function fillSelects() {
       const sourceSelect = document.getElementById('sourceRegion');
       const targetSelect = document.getElementById('targetRegion');
@@ -1014,7 +1125,7 @@
       const filtered = dispatches.filter(d => {
         const matchesRegion = !selectedRegion || d.targetRegion === selectedRegion || d.sourceRegion === selectedRegion;
         const matchesStatus = filter === 'all' || d.status === filter;
-        const searchText = `${d.id} ${d.sourceRegion} ${d.targetRegion} ${d.status} ${d.material}`.toLocaleLowerCase('tr');
+        const searchText = `${d.id} ${d.sourceRegion} ${d.targetRegion} ${d.status} ${d.material} ${d.routeStep}`.toLocaleLowerCase('tr');
         const matchesQuery = !q || searchText.includes(q);
         return matchesRegion && matchesStatus && matchesQuery;
       });
@@ -1027,6 +1138,7 @@
           <td>${formatDate(d.date)}</td>
           <td>${escapeHtml(d.material)}</td>
           <td>${Number(d.quantity).toLocaleString('tr-TR')} adet</td>
+          <td><span class="route-id">${escapeHtml(d.routeStep || 'Depodan çıktı')}</span></td>
           <td><span class="pill ${statusClass(d.status)}">${escapeHtml(d.status)}</span></td>
           <td><button class="actions" data-id="${escapeHtml(d.id)}" title="Durumu güncelle" aria-label="Durumu güncelle">···</button></td>
         </tr>
@@ -1038,6 +1150,8 @@
       document.getElementById('transitStat').textContent = dispatches.filter(d => d.status === 'Yolda').length;
       document.getElementById('deliveredStat').textContent = dispatches.filter(d => d.status === 'Teslim edildi').length;
       document.getElementById('regionTotal').textContent = regions.length;
+
+      document.getElementById('routeSummary').innerHTML = routeSummaryHTML();
 
       document.getElementById('regionList').innerHTML = regions.map(region => {
         const shipments = dispatches.filter(d => d.targetRegion === region || d.sourceRegion === region);
@@ -1128,6 +1242,7 @@
       const items = Number(document.getElementById('itemCount').value);
       const quantity = Number(document.getElementById('quantity').value);
       const status = document.getElementById('dispatchStatus').value;
+      const routeStep = document.getElementById('routeStep').value || 'Depodan çıktı';
 
       if (!id || !sourceRegion || !targetRegion || !material || !date || !items || !quantity) {
         toast('Lütfen tüm alanları doldurun.');
@@ -1147,7 +1262,8 @@
         material,
         items,
         quantity,
-        status
+        status,
+        routeStep
       };
 
       dispatches.unshift(row);
@@ -1155,7 +1271,7 @@
       selectedRegion = targetRegion;
       render();
       closeModal();
-      toast('İrsaliye başarıyla kaydedildi.');
+      toast(`İrsaliye ${id} adımına eklendi: ${routeStep}`);
     });
 
     document.getElementById('dispatchRows').addEventListener('click', e => {
@@ -1168,9 +1284,18 @@
       const statuses = ['Hazırlanıyor', 'Yolda', 'Teslim edildi', 'İptal edildi'];
       const currentIndex = statuses.indexOf(d.status);
       d.status = statuses[(currentIndex + 1) % statuses.length];
+
+      const routeMap = {
+        'Hazırlanıyor': 'Depodan çıktı',
+        'Yolda': 'Yol aşaması 1',
+        'Teslim edildi': 'Teslimat tamamlandı',
+        'İptal edildi': 'Depodan çıktı'
+      };
+
+      d.routeStep = routeMap[d.status] || d.routeStep;
       save();
       render();
-      toast(`${d.id}: ${d.status}`);
+      toast(`${d.id}: ${d.status} / ${d.routeStep}`);
     });
 
     document.querySelectorAll('.nav-link').forEach(button => {
